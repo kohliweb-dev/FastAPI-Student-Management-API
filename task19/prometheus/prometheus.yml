@@ -1,0 +1,45 @@
+# # global defines settings that apply by default across Prometheus.
+# # scrape_interval: 5s tells Prometheus to collect metrics every five seconds.
+# global:
+#   scrape_interval: 5s
+
+
+# # scrape_configs lists the monitoring targets.
+# # job_name identifies this monitoring job.
+# # targets contains the hostname and port of the service.
+# # prometheus:9090 means the Prometheus service on port 9090.
+# scrape_configs:
+#   - job_name: "prometheus"
+#     static_configs:
+#       - targets: ["prometheus:9090"]
+
+
+
+
+# # job_name: "fastapi" gives the job a name.
+# # metrics_path: /metrics tells Prometheus which endpoint provides the metrics.
+# # app:8000 points to our FastAPI service on port 8000.
+#   - job_name: "fastapi"
+#     metrics_path: /metrics
+#     static_configs:
+#       - targets: ["app:8000"]
+
+
+
+
+
+
+
+
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["prometheus:9090"]
+
+  - job_name: "student-management-api"
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["api:8000"]

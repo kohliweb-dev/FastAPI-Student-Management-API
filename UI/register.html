@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - Student Management System</title>
+
+    <link rel="stylesheet" href="style.css?v=20261013-2">
+</head>
+
+<body class="auth-page login-page">
+
+    <main class="auth-container login-container register-container">
+        <section class="login-panel register-panel" aria-labelledby="register-brand-title">
+            <div class="login-brand">
+                <span>Student Management</span>
+            </div>
+            <div class="login-intro">
+                <p class="panel-eyebrow">STUDENT PORTAL</p>
+                <h1 id="register-brand-title">Everything for your campus, in one place.</h1>
+                <p>Sign in to manage student records and keep your campus moving forward.</p>
+            </div>
+            <p class="login-panel-note">
+                <span class="status-dot" aria-hidden="true"></span>
+                A simpler way to stay organized
+            </p>
+        </section>
+
+        <section class="auth-card login-card register-card" aria-labelledby="register-title">
+
+            <p class="form-eyebrow">CREATE ACCOUNT</p>
+            <h2 id="register-title">Create your account</h2>
+            <p class="subtitle">Register a new user.</p>
+
+            <form onsubmit="registerUser(event)">
+
+                <label for="registerUsername">Username</label>
+
+                <input
+                    type="text"
+                    id="registerUsername"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="registerEmail">Email</label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter email"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="registerPassword">Password</label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Enter password"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <label for="registerRole">Role</label>
+
+                <select id="registerRole">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <button type="submit" class="primary-btn">
+                    Register
+                </button>
+
+            </form>
+
+            <p id="registerMessage" class="message"></p>
+
+            <div class="auth-link">
+                Already have an account?
+                <a href="index.html">Login</a>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js?v=20261012-1"></script>
+
+</body>
+</html>

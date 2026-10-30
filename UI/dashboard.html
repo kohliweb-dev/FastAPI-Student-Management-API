@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Management System</title>
+    <link rel="stylesheet" href="style.css?v=20261013-2">
+</head>
+
+<body class="dashboard-page">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="sidebar-brand" href="dashboard.html">
+                <span>Student Management</span>
+            </a>
+            <p class="sidebar-label">WORKSPACE</p>
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <a class="nav-link active" href="dashboard.html" aria-current="page">
+                    <span class="nav-icon" aria-hidden="true">D</span>
+                    Dashboard
+                </a>
+                <a class="nav-link" href="students.html">
+                    <span class="nav-icon" aria-hidden="true">S</span>
+                    Students
+                </a>
+            </nav>
+            <div class="sidebar-spacer"></div>
+        </aside>
+
+        <div class="workspace">
+            <header class="workspace-header">
+                <p>Student Management System</p>
+                <div class="header-account">
+                    <p class="header-user" id="welcomeUser">Welcome</p>
+                    <button class="header-logout" type="button" onclick="logoutUser()">Sign out</button>
+                </div>
+            </header>
+
+            <main class="page-content">
+                <section class="page-heading">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Welcome back. Here is your student workspace.</p>
+                    </div>
+                </section>
+
+                <div class="dashboard-overview">
+                <section class="dashboard-stats" aria-label="Student summary">
+                    <div class="stat-card">
+                        <p>Total students</p>
+                        <strong id="totalStudents">—</strong>
+                    </div>
+                    <div class="stat-card">
+                        <p>Your access</p>
+                        <strong id="dashboardRole">—</strong>
+                    </div>
+                    <div class="stat-card">
+                        <p>Workspace</p>
+                        <strong>Students</strong>
+                    </div>
+                </section>
+
+                <section class="dashboard-card form-card" id="addStudentSection">
+                    <h3>Add a student</h3>
+                    <p class="subtitle">Create a student record in your directory.</p>
+                    <form class="student-form" onsubmit="addStudent(event)">
+                        <div>
+                            <label for="studentName">Student name</label>
+                            <input type="text" id="studentName" placeholder="e.g. Alex Morgan" required>
+                        </div>
+                        <div>
+                            <label for="studentEmail">Email address</label>
+                            <input type="email" id="studentEmail" placeholder="student@example.com" required>
+                        </div>
+                        <div>
+                            <label for="studentAge">Age</label>
+                            <input type="number" id="studentAge" min="1" placeholder="Age" required>
+                        </div>
+                        <div>
+                            <label for="studentCourse">Course</label>
+                            <input type="text" id="studentCourse" placeholder="Course name" required>
+                        </div>
+                        <div class="form-actions">
+                            <button class="primary-btn" type="submit">Add student</button>
+                        </div>
+                    </form>
+                    <p id="studentMessage" class="message" aria-live="polite"></p>
+                </section>
+
+                <section class="dashboard-card" id="userAccessNotice" hidden>
+                    <h3>Student directory</h3>
+                    <p class="subtitle">Browse student records from the Students page.</p>
+                    <a class="secondary-btn" href="students.html">View students</a>
+                </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js?v=20261009-4"></script>
+</body>
+</html>

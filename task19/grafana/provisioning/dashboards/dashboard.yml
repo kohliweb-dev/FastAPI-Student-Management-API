@@ -1,0 +1,12 @@
+
+apiVersion: 1
+
+providers:
+  - name: "Task 19 Dashboards"
+    orgId: 1
+    folder: "Observability"
+    type: file
+    disableDeletion: true
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

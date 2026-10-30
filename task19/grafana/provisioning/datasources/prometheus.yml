@@ -1,0 +1,24 @@
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true
+
+
+
+
+
+
+
+# apiVersion: 1	Version of Grafana's provisioning configuration format.
+# datasources	Lists the data sources Grafana can query.
+# name: Prometheus	The name shown in Grafana.
+# type: prometheus	Specifies Prometheus as the data source type.
+# access: proxy	Grafana's server sends queries to Prometheus.
+# url: http://prometheus:9090	Address of the Prometheus service inside Docker.
+# isDefault: true	Makes Prometheus the default data source.
+# editable: true	Allows editing the data source in Grafana's interface.

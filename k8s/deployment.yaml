@@ -1,0 +1,36 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-api
+  template:
+    metadata:
+      labels:
+        app: student-api
+    spec:
+      containers:
+        - name: student-api
+          image: student-api:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+
+
+
+
+
+# kind: Deployment — Kubernetes manages your FastAPI application.
+# replicas: 1 — starts one API Pod.
+# image: student-api:v1 — uses the Docker image you built.
+# imagePullPolicy: IfNotPresent — uses the local image if it is already available.
+# containerPort: 8000 — your FastAPI application listens on port 8000.
+
+
+
+
+# Important: The API also needs to know when MongoDB is ready. We'll verify that and configure the Service before running the application.
