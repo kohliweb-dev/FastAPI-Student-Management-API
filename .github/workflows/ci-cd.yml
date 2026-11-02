@@ -16,6 +16,10 @@ jobs:
     name: Run Automated Tests
     runs-on: ubuntu-latest
 
+    # Temporary secret used only for automated testing
+    env:
+      SECRET_KEY: "ci-test-secret-key-not-for-production"
+
     steps:
       # Step 1: Get project code from GitHub
       - name: Checkout code
